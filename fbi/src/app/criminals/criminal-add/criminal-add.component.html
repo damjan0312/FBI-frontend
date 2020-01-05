@@ -1,0 +1,67 @@
+<div id="most-wanted-add">
+    <h2>
+        Add Criminal Informations
+        <i class="material-icons">
+            add
+        </i>
+    </h2>
+
+    <form [formGroup]="criminalForm" (submit)="createCriminal()">
+        <div class="example-container">
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Place of Birth" formControlName="placeOfBirth" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Date of Birth" formControlName="dateOfBirth" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Hair" formControlName="hair">
+                    <mat-option value="Brown">Brown</mat-option>
+                    <mat-option value="Black">Black</mat-option>
+                    <mat-option value="Blonde">Blonde</mat-option>
+                    <mat-option value="No Hair">No Hair</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Eyes" formControlName="eyes">
+                    <mat-option value="Brown">Brown</mat-option>
+                    <mat-option value="Black">Black</mat-option>
+                    <mat-option value="Green">Blonde</mat-option>
+                    <mat-option value="Blue">Blonde</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Height" formControlName="height" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Weight" formControlName="weight" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Sex" formControlName="sex" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Race" formControlName="race" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ocuppation" formControlName="ocuppation" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Nationality" formControlName="nationality" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Reward" formControlName="reward" />
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary">
+            Add Criminal
+            <i class="material-icons">
+                add
+            </i>
+        </button>
+    </form>
+    <hr />
+</div>
