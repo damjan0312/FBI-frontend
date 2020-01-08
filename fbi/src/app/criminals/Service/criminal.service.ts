@@ -10,7 +10,7 @@ import { Criminal } from '../criminals.model';
 })
 
 export class CriminalService {
-    private URL = 'tu cemo url';
+    private URL = 'http://localhost:3001/criminals';
 
     constructor(private http: HttpClient) { }
 
@@ -31,6 +31,6 @@ export class CriminalService {
     }
 
     deleteCriminal(id: number) {
-        return this.http.delete(`${this.URL}`);
+        return this.http.delete(`${this.URL}/${id}`);
     }
 }

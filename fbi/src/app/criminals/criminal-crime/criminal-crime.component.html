@@ -1,0 +1,30 @@
+<div>
+    <h2>
+        Add crime to a criminal
+        <i class="material-icons">
+            add
+        </i>
+    </h2>
+    <form [formGroup]="crimeForm" (submit)="addCrime()">
+        <div class="example-container">
+            <mat-form-field>
+                <mat-select placeholder="Criminal" formControlName="criminal" [(ngModel)]="selectedCriminal">
+                    <mat-option *ngFor="let criminal of criminalsBox" [value]="criminal.id">{{criminal.hair}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Crime" formControlName="crime" [(ngModel)]="selectedCrime">
+                    <mat-option *ngFor="let crime of crimeBox" [value]="crime.id">{{crime.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary">
+            Add crime
+            <i class="material-icons">
+                add
+            </i>
+        </button>
+    </form>
+</div>
