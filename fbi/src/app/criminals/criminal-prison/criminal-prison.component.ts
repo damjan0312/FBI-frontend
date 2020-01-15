@@ -17,35 +17,41 @@ export class CriminalPrisonComponent implements OnInit {
   prisonsBox: Array<Prison> = [];
   criminalsBox: Array<Criminal> = [];
 
-  selectedPrison: string;
-  selectedCriminal: string;
+  selectedPrison: number;
+  selectedCriminal: number;
+  selectedDateTo: string;
+  selectedDateFrom: string;
 
 
   constructor(private builder: FormBuilder, private service: PrisonService, private criminalService: CriminalService) {
 
     this.prisonForm = this.builder.group({
       criminal: ['', Validators.required],
-      prison: ['', Validators.required]
+      prison: ['', Validators.required],
+      dateFrom: ['', Validators.required],
+      dateTo: ['', Validators.required],
     })
   }
 
   ngOnInit() {
 
-    // this.service.loadPrison().subscribe(prisons => {
-    //   this.prisonsBox = prisons;
-    // })
+    this.service.loadPrison().subscribe(prisons => {
+      this.prisonsBox = prisons;
+    })
 
-    // this.criminalService.loadCriminals().subscribe(criminals => {
-    //   this.criminalsBox = criminals;
-    // })
+    this.criminalService.loadCriminals().subscribe(criminals => {
+      this.criminalsBox = criminals;
+    })
 
   }
 
 
   addPrison() {
-    // console.log(this.selectedCriminal);
-    // console.log(this.selectedPrison);
-    console.log("Komentarisan je poziv")
-    //this.service.addRelationship(this.selectedCriminal, this.selectedPrison);
+    console.log(this.selectedCriminal);
+    console.log(this.selectedPrison);
+    // console.log("Komentarisan je poziv")
+    this.service.addRelationship(this.selectedCriminal, this.selectedPrison, this.selectedDateFrom, this.selectedDateTo).subscribe(res => {
+      console.log(res);
+    });
   }
 }

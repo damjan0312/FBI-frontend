@@ -10,6 +10,7 @@ import { CriminalListComponent } from './criminal-list/criminal-list.component';
 import { MaterialModule } from '../material';
 import { CriminalPrisonComponent } from './criminal-prison/criminal-prison.component';
 import { CriminalCrimeComponent } from './criminal-crime/criminal-crime.component';
+import { CriminalDetailComponent } from './criminal-detail/criminal-detail.component';
 const routes: Routes = [
     {
         path: '',
@@ -18,7 +19,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [CriminalComponent, CriminalAddComponent, CriminalEditComponent, CriminalListComponent, CriminalPrisonComponent, CriminalCrimeComponent],
+    declarations: [CriminalComponent, CriminalAddComponent,
+        CriminalEditComponent, CriminalListComponent,
+        CriminalPrisonComponent, CriminalCrimeComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),

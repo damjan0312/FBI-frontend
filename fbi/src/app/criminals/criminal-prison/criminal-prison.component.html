@@ -9,14 +9,20 @@
         <div class="example-container">
             <mat-form-field>
                 <mat-select placeholder="Criminal" formControlName="criminal" [(ngModel)]="selectedCriminal">
-                    <mat-option *ngFor="let criminal of criminalsBox" [value]="criminal.id">{{criminal.hair}}
+                    <mat-option *ngFor="let criminal of criminalsBox" [value]="criminal.Id">{{criminal.name}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field>
                 <mat-select placeholder="Prison" formControlName="prison" [(ngModel)]="selectedPrison">
-                    <mat-option *ngFor="let prison of prisonsBox" [value]="prison.id">{{prison.name}}</mat-option>
+                    <mat-option *ngFor="let prison of prisonsBox" [value]="prison.Id">{{prison.name}}</mat-option>
                 </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Date From" formControlName="dateFrom" [(ngModel)]="selectedDateFrom" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Date To" formControlName="dateTo" [(ngModel)]="selectedDateTo" />
             </mat-form-field>
         </div>
 

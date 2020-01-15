@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable, Output } from '@angular/core';
 import { Criminal } from '../criminals.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CriminalService } from '../Service/criminal.service'
+import { CriminalListComponent } from '../criminal-list/criminal-list.component';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-criminal-add',
@@ -13,6 +15,9 @@ export class CriminalAddComponent implements OnInit {
   constructor(private builder: FormBuilder, private service: CriminalService) { }
 
   ngOnInit() {
+
+
+
     this.criminalForm = this.builder.group({
       name: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
@@ -43,14 +48,18 @@ export class CriminalAddComponent implements OnInit {
       weight: this.criminalForm.get('weight').value,
       sex: this.criminalForm.get('sex').value,
       race: this.criminalForm.get('race').value,
-      ocuppation: this.criminalForm.get('ocuppation').value,
+      occupation: this.criminalForm.get('ocuppation').value,
       nationality: this.criminalForm.get('nationality').value,
       reward: this.criminalForm.get('reward').value
     };
 
     console.log(newCriminal);
 
-    console.log(this.service.createCriminal(newCriminal));
+    this.service.createCriminal(newCriminal).subscribe(res => {
+      if (res === true) {
+        window.location.reload();
+      }
+    });
   }
 
 }

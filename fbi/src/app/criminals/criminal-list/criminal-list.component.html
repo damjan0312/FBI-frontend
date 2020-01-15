@@ -22,7 +22,7 @@
 
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-                <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+                <td mat-cell *matCellDef="let row">{{ row.Id }}</td>
             </ng-container>
 
             <!--  <ng-container matColumnDef="update_criminal">
@@ -47,15 +47,15 @@
                 </td>
             </ng-container>
 
-            <!--      <ng-container matColumnDef="see_more">
+            <ng-container matColumnDef="see_more">
                 <th mat-header-cell *matHeaderCellDef>See More</th>
                 <td mat-cell *matCellDef="let row" (click)="seeDetails(row)">
-                    <a mat-raised-button color="accent" mat-list-item matTooltip="See Criminal's Page">See More
+                    <a mat-raised-button color="primary" mat-list-item matTooltip="See Criminal's Page">See More
                         <i class="material-icons">
                             remove_red_eye
                         </i></a>
                 </td>
-            </ng-container> -->
+            </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

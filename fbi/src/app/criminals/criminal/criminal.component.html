@@ -1,14 +1,24 @@
 <div class="container">
     <div id="add-criminal">
-        <app-criminal-add></app-criminal-add>
+        <div id="frame">
+            <app-criminal-add></app-criminal-add>
+        </div>
     </div>
     <div id="prison-and-crime">
         <div id="prison">
-            <app-criminal-prison> </app-criminal-prison>
+            <div id="frame">
+                <app-criminal-prison> </app-criminal-prison>
+            </div>
         </div>
         <div id="crime">
-            <app-criminal-crime></app-criminal-crime>
+            <div id="frame">
+                <app-criminal-crime></app-criminal-crime>
+            </div>
         </div>
     </div>
-    <app-criminal-list></app-criminal-list>
+    <div id="list">
+        <div id="frame">
+            <app-criminal-list></app-criminal-list>
+        </div>
+    </div>
 </div>

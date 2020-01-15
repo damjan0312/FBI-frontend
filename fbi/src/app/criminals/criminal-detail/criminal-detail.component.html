@@ -1,0 +1,94 @@
+<div class="container" *ngIf="model">
+    <h1 class="names">
+        <h3>{{ model.name }}</h3>
+    </h1>
+    <hr />
+    <div class="flex-container">
+        <div class="infos">
+            <span>
+                <label for="name">Name: </label>
+                <h4 id="name">{{ model.name }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="placeOfBirth">Place of Birth: </label>
+                <h4 id="placeOfBirth">{{ model.placeOfBirth }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="dateOfBirth">Date of Birth: </label>
+                <h4 id="dateOfBirth">{{ model.dateOfBirth }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="nationality">Nationality: </label>
+                <h4 id="nationality">{{ model.nationality }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="eyes">Eyes: </label>
+                <h4 id="eyes">{{ model.eyes }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="sex">Sex: </label>
+                <h4 id="sex">{{ model.sex }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="hair">Hair: </label>
+                <h4 id="hair">{{ model.hair }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="height">Height: </label>
+                <h4 id="height">{{ model.height }}</h4>
+            </span>
+            <br />
+            <span>
+                <label for="weight">Weight: </label>
+                <h4 id="weight">{{ model.weight }}</h4>
+            </span>
+            <br />
+
+            <span>
+                <label for="occupation">Occupation: </label>
+                <h4 id="occupation">{{ model.occupation }}</h4>
+            </span>
+            <br />
+
+            <span>
+                <label for="reward">Reward: </label>
+                <h4 id="reward">{{ model.reward }}</h4>
+            </span>
+
+
+        </div>
+        <div class="image-div">
+            <img src="http://million.com.sg/wp-content/themes/million_theme-child/image/no-image.png" alt="" />
+
+            <br />
+            <div class="alert">
+                <p>PERSON OF INTEREST SHOULD BE CONSIDERED AMRED AND DANGEROUS</p>
+            </div>
+
+            <div id="restOfInformation">
+                <span>
+                    <label for="prison">Prisons: </label>
+                    <h4 id="prison">{{ details.prisons }}</h4>
+                </span>
+                <br />
+                <span>
+                    <label for="crimes">Crimes: </label>
+                    <h4 id="crimes">{{ details.crimes }}</h4>
+                </span>
+                <br />
+                <span>
+                    <label for="agent">Agent: </label>
+                    <h4 id="agent">{{ details.agent }}</h4>
+                </span>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

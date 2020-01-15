@@ -1,5 +1,5 @@
 export interface Criminal {
-    id?: number;
+    Id?: number;
     name: string;
     placeOfBirth: string;
     dateOfBirth: string;
@@ -9,7 +9,7 @@ export interface Criminal {
     weight: string;
     sex: string;
     race: string;
-    ocuppation: string;
+    occupation: string;
     nationality: string;
     reward: string;
 }

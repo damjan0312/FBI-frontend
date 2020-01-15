@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Injectable } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { CriminalService } from '../Service/criminal.service';
@@ -19,7 +19,7 @@ export class CriminalListComponent implements OnInit {
   searchKey: string;
   data$;
 
-  displayedColumns = ['id', 'name', 'delete_criminal'];
+  displayedColumns = ['id', 'name', 'delete_criminal', 'see_more'];
 
   ngOnInit() {
 
@@ -34,11 +34,14 @@ export class CriminalListComponent implements OnInit {
     });
   }
 
+  seeDetails(criminal: Criminal) {
+    this.router.navigate(['/mostWanted/details', criminal.Id]);
+  }
 
   deleteCriminal(criminal: Criminal) {
     if (confirm('Sure You Want to Delete this Criminal from Our Database?')) {
-      console.log(criminal.id);
-      this.service.deleteCriminal(criminal.id)
+      console.log(criminal.Id);
+      this.service.deleteCriminal(criminal.Id).subscribe(res => window.location.reload());
     }
   }
 
@@ -49,6 +52,12 @@ export class CriminalListComponent implements OnInit {
 
   applyFilter() {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  refresh() {
+    this.service.loadCriminals().subscribe((data: Criminal[]) => {
+      this.dataSource.data = data;
+    })
   }
 
 }

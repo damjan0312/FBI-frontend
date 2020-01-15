@@ -1,5 +1,5 @@
 export interface Crime {
-    id?: string;
+    Id?: number;
     name?: string;
     punishment?: string;
 }
